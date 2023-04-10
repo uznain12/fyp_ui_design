@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:fyp_ui_design/Home_Screen/homescreen.dart';
+import 'package:fyp_ui_design/splash_screen.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: HomeScreen(),
+    home: SplashScreen(),
   ));
 }
 

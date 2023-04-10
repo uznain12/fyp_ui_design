@@ -256,7 +256,7 @@ class _ApplicantProfileState extends State<ApplicantProfile> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => EmployeeDashboard()));
+                              builder: (context) => ApplicantDashboard()));
                     },
                     child: const Text(
                       'Back',

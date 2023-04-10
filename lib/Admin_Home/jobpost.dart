@@ -23,7 +23,7 @@ TextEditingController _datecontroller = new TextEditingController();
 void newjob(String title, experience, qualification, vacancies, date) async {
   try {
     Response responce = await post(
-        Uri.parse('http://192.168.1.110/HrmFypApi/api/ApplicantInfo/JobPost'),
+        Uri.parse('http://192.168.43.117/HrmFypApi/api/ApplicantInfo/JobPost'),
         body: {
           'j_title': title,
           'j_exp': experience,

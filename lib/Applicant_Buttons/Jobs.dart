@@ -20,7 +20,7 @@ class _ApplicantApplyJobState extends State<ApplicantApplyJob> {
   List<jobpostmodel> postlist = [];
   Future<List<jobpostmodel>> getapi() async {
     final responce = await http.get(
-        Uri.parse('http://192.168.1.102/HrmFypApi/api/ApplicantInfo/JobGet'));
+        Uri.parse('http://192.168.43.117/HrmFypApi/api/ApplicantInfo/JobGet'));
     var data = jsonDecode(responce.body.toString());
     if (responce.statusCode == 200) {
       postlist.clear();

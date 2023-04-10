@@ -5,6 +5,8 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:fyp_ui_design/Admin_Home/jobpost.dart';
 import 'package:fyp_ui_design/Applicant_Buttons/profile.dart';
+import 'package:fyp_ui_design/Login_Screens/login.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AdminDashboard extends StatefulWidget {
   const AdminDashboard({super.key});
@@ -107,11 +109,14 @@ class _AdminDashboardState extends State<AdminDashboard> {
                       'Log Out',
                       style: TextStyle(fontSize: 20),
                     ),
-                    onTap: () {
+                    onTap: () async {
+                      SharedPreferences sp =
+                          await SharedPreferences.getInstance();
+                      sp.clear();
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => JobPost(),
+                          builder: (context) => LoginPage(),
                         ),
                       );
                     },

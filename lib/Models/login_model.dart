@@ -1,4 +1,6 @@
+import 'package:fyp_ui_design/uri.dart';
 import 'package:http/http.dart' as http;
+import 'package:fyp_ui_design/uri.dart';
 
 class LoginModel {
   int? uid;
@@ -12,6 +14,7 @@ class LoginModel {
   String? address;
   String? password;
   String? role;
+  dynamic image;
   Null? apply;
   List<Null>? educations;
   List<Null>? experiences;
@@ -30,6 +33,7 @@ class LoginModel {
     password = map['password'];
     role = map['role'];
     apply = map['Apply'];
+    image = map['image'];
   }
 
   Map<String, dynamic> tomap() {
@@ -46,12 +50,13 @@ class LoginModel {
       'password': password,
       'role': role,
       'Apply': apply,
+      'image': image,
     };
   }
 
   Future<String?> login() async {
     String url =
-        'http://192.168.43.117/HrmFypApi/api/UserLogin/Login?email=${email}&password=${password}';
+        'http://$ip/HrmFypApi/api/UserLogin/Login?email=${email}&password=${password}';
     Uri uri = Uri.parse(url);
     var response = await http.get(uri);
 
